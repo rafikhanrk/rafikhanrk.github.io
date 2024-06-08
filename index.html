@@ -3,48 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World History Project by Rafi Khan</title>
+    <title>World History 10 Project</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3/c3.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/c3/c3.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <h1>World History 10 Final Project</h1>
-        <p>by Rafi Khan</p>
+        <h1>World History 10 Project</h1>
+        <h2>By Rafi Khan</h2>
     </header>
     <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>How has United States involvement in Iraq and Syria caused the rise of extremist terror groups like ISIS, Al-Qaeda, and their affiliates?</p>
-        </section>
-        <section id="iraq-syria-conflict">
-            <h2>Iraq and Syria Conflict</h2>
-            <p>The Iraq War was an invasion of Iraq that sought to remove a problematic Saddam Hussein from his powerful dictatorship. The invasion saw the deaths of hundreds of thousands, and the conflict signified the start of a long and disastrous fight against insurgency in the country. Preceding the Iraq war, the Gulf War was started by the hostile military operations of Iraq. The year 1990 marks the invasion of a persistent Saddam Hussein into Kuwait territories in search of oil to clear a debt. This sparked the start of the Persian war, ending in Iraq’s ultimate defeat by the United States and sanctions placed in order to restrain Iraqi aggression. (Encyclopaedia Britannica, s.v. "Iraq War," last modified May 29, 2024, https://www.britannica.com/event/Iraq-War.) The sanctions put in place made for it to be near impossible for Iraq to develop weapons of mass destruction or any defensive/offensive system.   Multiple UN inspections in the years following revealed the development of proscribed weaponry and technology scattered throughout the country.  Iraq was constantly interfering and rejecting the inspections, creating frustration in the International Community. In 1998, United States President Bill Clinton executed Operation Desert Fox, bombing more than several Iraqi military installations, causing Iraq to start completely refusing entry to UN inspectors. The sanctions in place for Iraq were slowly dissolving, as neighboring countries reopened trade with Iraq.  "In 2002 the new U.S. president, George W. Bush, argued that the vulnerability of the United States following the September 11 attacks of 2001, combined with Iraq's alleged continued production of weapons of mass destruction (an accusation that was later proved erroneous) and its support for terrorist groups - which, according to the Bush administration, included Al-Qaeda, the perpetrators of the September 11 attacks, - made disarming Iraq a new priority." (Encyclopaedia Britannica, s.v. "Iraq War," last modified May 29, 2024, https://www.britannica.com/event/Iraq-War.)  Saddam Hussein was given an ultimatum to leave the country within the next 48 hours, or the United States would invade. This was against the wishes of European countries such as Germany, who believed Saddam would comply with UN officers seeking any weapons of mass destruction. On March 20, 2003, The United States dropped guided bombs on a bunker complex in which they believed Saddam Hussein was having a meeting. The US then invaded Iraq from the south in Kuwait, and most Iraqi soldiers chose not to resist until US forces reached Baghdad. Encyclopaedia Britannica, s.v. "Iraq War," last modified May 29, 2024, https://www.britannica.com/event/Iraq-War.</p>
-            <div id="map"></div>
-        </section>
-        <section id="terror-iraq">
-            <h2>Terror in Iraq</h2>
-            <p>The overthrowing of Saddam Hussein in Iraq created a massive power vacuum...</p>
-            <div id="iraq-graph"></div>
-        </section>
-        <section id="terror-syria">
-            <h2>Terror in Syria</h2>
-            <p>The United States' backing of the YPG and other divided rebel groups allowed ISIS to exploit these divisions and take over most of Syria...</p>
-            <div id="syria-graph"></div>
-        </section>
-        <section id="primary-source-analysis">
-            <h2>Primary Source Analysis</h2>
-            <p>The "National Intelligence Estimate: Trends in Global Terrorism: Implications for the United States" created by the Office of the Director of National Intelligence...</p>
-        </section>
-        <section id="annotated-bibliography">
-            <h2>Annotated Bibliography</h2>
-            <p>Encyclopaedia Britannica s.v. "Iraq War" last modified May 29, 2024...</p>
+        <section class="scrolly">
+            <div class="step" data-step="1">
+                <h2>Introduction</h2>
+                <p>How has United States involvement in Iraq and Syria caused the rise of extremist terror groups like ISIS, Al-Qaeda, and their affiliates?</p>
+                <img src="placeholder-image.jpg" alt="Introduction Image">
+            </div>
+            <div class="step" data-step="2">
+                <h2>Iraq and Syria Conflict</h2>
+                <p>The Iraq War and its implications on regional stability.</p>
+                <div id="chart"></div>
+                <img src="placeholder-image.jpg" alt="Iraq Conflict Image">
+            </div>
+            <div class="step" data-step="3">
+                <h2>Terror in Iraq</h2>
+                <p>The rise of AQI and later ISIS due to the power vacuum created by the U.S. invasion.</p>
+                <img src="placeholder-image.jpg" alt="Terror in Iraq Image">
+            </div>
+            <div class="step" data-step="4">
+                <h2>Terror in Syria</h2>
+                <p>The impact of U.S. backing of rebel groups in Syria.</p>
+                <div id="map"></div>
+            </div>
+            <div class="step" data-step="5">
+                <h2>Conclusion</h2>
+                <p>The overall effects of U.S. involvement in the Middle East on the rise of extremist groups.</p>
+                <img src="placeholder-image.jpg" alt="Conclusion Image">
+            </div>
         </section>
     </main>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <script src="https://cdn.jsdelivr.net/npm/c3"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scroller.setup({
         step: '.step',
         offset: 0.5,
-        debug: true,
+        debug: false,
     })
     .onStepEnter(response => {
         const { element, index, direction } = response;
@@ -46,4 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
             .bindPopup('Athens')
             .openPopup();
     }
+
+    // Initialize the Slick carousel
+    $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
 });

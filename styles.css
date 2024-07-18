@@ -3,134 +3,119 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    color: #333;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
 }
 
 header {
-    background: #333;
+    background: #4CAF50;
     color: #fff;
-    padding-top: 1rem;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header ul {
-    padding: 0;
-    list-style: none;
-}
-
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    float: left;
     margin: 0;
-    font-size: 24px;
-    margin-left: 20px;
 }
 
-nav {
-    float: right;
-    margin-top: 10px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .slides {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .slide {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: absolute;
     top: 0;
     left: 100%;
     transition: left 0.5s ease-in-out;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
 }
 
 .slide:target {
     left: 0;
-}
-
-.slide section {
-    padding: 2rem 0;
+    display: block;
+    opacity: 1;
+    z-index: 1;
 }
 
 h2 {
-    color: #333;
+    color: #4CAF50;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-h3 {
-    color: #555;
-    margin-bottom: 10px;
-}
+ul {
+    list-style-type: disc;
+    padding-left:### 3. JavaScript (`scripts.js`):
+This file will manage the slide transitions and animations.
 
-.neighborhood {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const hash = window.location.hash || '#slide1';
+    const targetSlide = document.querySelector(hash);
+    
+    if (targetSlide) {
+        targetSlide.style.display = 'block';
+        targetSlide.style.left = '0';
+    }
+    
+    slides.forEach(slide => {
+        slide.addEventListener('transitionend', () => {
+            if (!slide.matches(hash)) {
+                slide.style.display = 'none';
+            }
+        });
+    });
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    border-top: #77aaff 3px solid;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            slides.forEach(slide => {
+                if (slide !== target) {
+                    slide.style.left = '100%';
+                    slide.style.display = 'none';
+                }
+            });
 
-.map {
-    height: 300px;
-    margin: 1rem 0;
-    border-radius: 10px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1rem 0;
-}
-
-.next, .prev {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: #fff;
-    padding: 1rem;
-    text-decoration: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-}
-
-.next {
-    right: 20px;
-}
-
-.prev {
-    left: 20px;
-}
+            target.style.display = 'block';
+            setTimeout(() => target.style.left = '0', 0);
+        });
+    });
+});

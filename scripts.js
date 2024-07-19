@@ -60,4 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }).addTo(findingsMap);
     L.marker([47.5480, -122.2929]).addTo(findingsMap).bindPopup('Rainier Beach').openPopup();
     L.marker([47.4630, -122.2445]).addTo(findingsMap).bindPopup('Tukwila').openPopup();
+
+    // Country Distribution Chart
+    var ctx3 = document.getElementById('countryChart').getContext('2d');
+    var countryChart = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Somalia', 'Vietnam', 'Ethiopia', 'Burma', 'Bhutan', 'Venezuela', 'Angola', 'Congo'],
+            datasets: [{
+                label: 'Rainier Valley',
+                data: [500, 400, 300, 200, 100, 50, 30, 20],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Tukwila',
+                data: [600, 500, 400, 300, 200, 150, 100, 50],
+                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(153, 102, 255, 1)',
+                borderWidth: 1
+            }, {
+                label: 'White Center',
+                data: [700, 600, 500, 400, 300, 250, 200, 150],
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 });

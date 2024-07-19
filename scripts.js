@@ -61,4 +61,3 @@ document.addEventListener('DOMContentLoaded', function() {
     L.marker([47.5480, -122.2929]).addTo(findingsMap).bindPopup('Rainier Beach').openPopup();
     L.marker([47.4630, -122.2445]).addTo(findingsMap).bindPopup('Tukwila').openPopup();
 });
-

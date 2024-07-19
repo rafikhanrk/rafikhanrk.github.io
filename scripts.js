@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var refugeeChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['2000', '2005', '2010', '2015', '2020'],
+            labels: ['1977', '1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2020'],
             datasets: [{
                 label: 'Number of Refugees',
-                data: [5000, 10000, 15000, 20000, 25000],
+                data: [1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000, 30000],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1

@@ -46,6 +46,13 @@ main {
 
 h2 {
     color: #800020;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #355E3B;
+    font-size: 1.5em;
 }
 
 section {
@@ -54,6 +61,12 @@ section {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: bold;
 }
 
 img {
@@ -72,7 +85,7 @@ footer {
     bottom: 0;
 }
 
-#statistics, #rainier-valley, #tukwila, #resolution {
+#statistics, #rainier-valley, #columbia-city, #tukwila, #resolution {
     margin-bottom: 20px;
 }
 
@@ -87,4 +100,13 @@ canvas {
     margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    background-color: #F5F5DC;
+    padding: 15px;
+    border: 1px solid #D2B48C;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }

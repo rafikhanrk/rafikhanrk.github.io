@@ -79,43 +79,33 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
 ul {
     list-style-type: disc;
-    padding-left:### 3. JavaScript (`scripts.js`):
-This file will manage the slide transitions and animations.
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 
-```javascript
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const hash = window.location.hash || '#slide1';
-    const targetSlide = document.querySelector(hash);
-    
-    if (targetSlide) {
-        targetSlide.style.display = 'block';
-        targetSlide.style.left = '0';
-    }
-    
-    slides.forEach(slide => {
-        slide.addEventListener('transitionend', () => {
-            if (!slide.matches(hash)) {
-                slide.style.display = 'none';
-            }
-        });
-    });
+ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
 
-    document.querySelectorAll('a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            slides.forEach(slide => {
-                if (slide !== target) {
-                    slide.style.left = '100%';
-                    slide.style.display = 'none';
-                }
-            });
-
-            target.style.display = 'block';
-            setTimeout(() => target.style.left = '0', 0);
-        });
-    });
-});
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding

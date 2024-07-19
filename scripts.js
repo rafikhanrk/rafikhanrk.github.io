@@ -66,22 +66,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var countryChart = new Chart(ctx3, {
         type: 'bar',
         data: {
-            labels: ['Somalia', 'Vietnam', 'Ethiopia', 'Burma', 'Bhutan', 'Venezuela', 'Angola', 'Congo'],
+            labels: ['Somalia', 'Vietnam', 'Ethiopia', 'Burma', 'Bhutan', 'Venezuela', 'Angola', 'Congo', 'Iraq', 'Iran', 'Cambodia', 'Afghanistan', 'Palestine', 'Syria', 'Cuba', 'Sudan'],
             datasets: [{
                 label: 'Rainier Valley',
-                data: [500, 400, 300, 200, 100, 50, 30, 20],
+                data: [500, 400, 300, 200, 100, 50, 30, 20, 10, 15, 25, 35, 45, 55, 65, 75],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }, {
                 label: 'Tukwila',
-                data: [600, 500, 400, 300, 200, 150, 100, 50],
+                data: [600, 500, 400, 300, 200, 150, 100, 50, 40, 35, 45, 55, 65, 75, 85, 95],
                 backgroundColor: 'rgba(153, 102, 255, 0.2)',
                 borderColor: 'rgba(153, 102, 255, 1)',
                 borderWidth: 1
             }, {
                 label: 'White Center',
-                data: [700, 600, 500, 400, 300, 250, 200, 150],
+                data: [700, 600, 500, 400, 300, 250, 200, 150, 120, 110, 105, 95, 85, 75, 65, 55],
                 backgroundColor: 'rgba(255, 159, 64, 0.2)',
                 borderColor: 'rgba(255, 159, 64, 1)',
                 borderWidth: 1

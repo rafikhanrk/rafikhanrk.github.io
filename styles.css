@@ -85,7 +85,7 @@ footer {
     bottom: 0;
 }
 
-#statistics, #rainier-valley, #columbia-city, #tukwila, #resolution {
+#statistics, #rainier-valley, #columbia-city, #tukwila, #white-center, #resolution, #country-distribution {
     margin-bottom: 20px;
 }
 
@@ -110,4 +110,3 @@ canvas {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-

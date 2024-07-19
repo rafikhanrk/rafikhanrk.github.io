@@ -62,14 +62,6 @@ section {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 p {
@@ -118,24 +110,4 @@ canvas {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-}
-
-.section[data-transition="fade"] {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.section[data-transition="fade"].visible {
-    opacity: 1;
-}
-
-.section[data-transition="slide-up"] {
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-}
-
-.section[data-transition="slide-up"].visible {
-    transform: translateY(0);
-    opacity: 1;
 }

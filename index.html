@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refugee Housing Crisis in Washington State</title>
+    <title>Refugee Housing Crisis in Seattle Area</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
-        <h1>Refugee Housing Crisis in Washington State</h1>
+        <h1>Refugee Housing Crisis in Seattle Area</h1>
     </header>
     <nav>
         <ul>
@@ -26,41 +25,33 @@
             <h2>Introduction</h2>
             <p>Washington State has consistently ranked among the top states for refugee resettlement in the United States. This section provides an overview of refugee immigration statistics, demographics, and trends over time.</p>
             <div id="statistics">
-                <h3>Refugee Immigration Statistics</h3>
-                <p>In recent years, Washington State has consistently ranked among the top states for refugee resettlement in the United States. According to the U.S. Office of Refugee Resettlement, Washington has welcomed thousands of refugees from countries such as Somalia, Vietnam, Ethiopia, Venezuela, and more.</p>
-                <h4>Demographics Over Time</h4>
-                <p>The influx of refugees to the Seattle area has varied over the years. In the early 2000s, the majority came from Southeast Asia and Africa. More recently, there has been an increase in refugees from the Middle East and Latin America.</p>
-                <div id="refugee-chart"></div>
-                <div id="refugee-map"></div>
+                <canvas id="refugeeChart"></canvas>
             </div>
+            <div id="map" style="height: 400px;"></div>
         </section>
         <section id="confrontation">
             <h2>Confrontation</h2>
             <div id="rainier-valley">
                 <h3>Rainier Valley</h3>
-                <p>Rainier Valley is one of Seattle's most ethnically diverse neighborhoods. Within this area, Rainier Beach stands out for its significant refugee population.</p>
                 <img src="images/rainier_beach.jpg" alt="Rainier Beach">
                 <p>Rainier Beach has a diverse cultural landscape with a notable presence of refugees from Somalia, Vietnam, Ethiopia, and other countries. Community organizations provide vital support through housing, legal assistance, and cultural integration programs.</p>
             </div>
             <div id="tukwila">
                 <h3>Tukwila</h3>
-                <p>Tukwila, located south of Seattle, has a high concentration of refugees. Nearly 40% of Tukwila’s population is foreign-born, with significant numbers from Somalia, Burma, Bhutan, Venezuela, Angola, and Congo.</p>
                 <img src="images/tukwila.jpg" alt="Tukwila">
-                <p>This church has become a crucial hub for asylum seekers, providing shelter and establishing a sanctioned encampment and temporary tent village. Over 600 individuals have passed through the site, highlighting the community's efforts to support refugees.</p>
+                <p>Tukwila, located south of Seattle, has a high concentration of refugees. Nearly 40% of Tukwila’s population is foreign-born, with significant numbers from Somalia, Burma, Bhutan, Venezuela, Angola, and Congo. This church has become a crucial hub for asylum seekers, providing shelter and establishing a sanctioned encampment and temporary tent village. Over 600 individuals have passed through the site, highlighting the community's efforts to support refugees.</p>
             </div>
         </section>
         <section id="resolution">
             <h2>Resolution</h2>
             <p>This section summarizes the key findings and discusses the impact of the refugee influx on crime rates, housing, and cultural integration in Rainier Beach and Tukwila.</p>
-            <div id="findings-chart"></div>
-            <div id="findings-map"></div>
+            <canvas id="crimeChart"></canvas>
+            <div id="findings-map" style="height: 400px;"></div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Refugee Housing Crisis Project</p>
     </footer>
-    <!-- Include Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

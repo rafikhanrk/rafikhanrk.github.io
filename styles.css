@@ -70,7 +70,12 @@ footer {
     margin-bottom: 20px;
 }
 
-#refugee-chart, #refugee-map, #findings-chart, #findings-map {
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+#map, #findings-map {
     width: 100%;
     height: 400px;
     margin-top: 20px;

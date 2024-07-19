@@ -1,23 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the map for Rainier Valley
-    const rainierMap = L.map('rainier-map').setView([47.5114, -122.2587], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(rainierMap);
-    fetch('rainier_beach.geojson')
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data).addTo(rainierMap);
-        });
+    const slides = document.querySelectorAll('.slide');
+    const links = document.querySelectorAll('nav a');
+    const prevButtons = document.querySelectorAll('.prev');
+    const nextButtons = document.querySelectorAll('.next');
 
-    // Initialize the map for Tukwila
-    const tukwilaMap = L.map('tukwila-map').setView([47.4747, -122.2755], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(tukwilaMap);
-    fetch('tukwila.geojson')
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data).addTo(tukwilaMap);
+    function navigateToSlide(targetId) {
+        slides.forEach(slide => {
+            if (slide.id === targetId) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
         });
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            navigateToSlide(targetId);
+        });
+    });
+
+    prevButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentSlide = document.querySelector('.slide.active');
+            const prevSlide = currentSlide.previousElementSibling;
+            if (prevSlide && prevSlide.classList.contains('slide')) {
+                navigateToSlide(prevSlide.id);
+            }
+        });
+    });
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentSlide = document.querySelector('.slide.active');
+            const nextSlide = currentSlide.nextElementSibling;
+            if (nextSlide && nextSlide.classList.contains('slide')) {
+                navigateToSlide(nextSlide.id);
+            }
+        });
+    });
+
+    // Initialize the first slide as active
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+    }
 });

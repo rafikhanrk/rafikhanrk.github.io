@@ -3,170 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact of Refugee Immigration on Seattle Neighborhoods</title>
+    <title>Refugee Housing Crisis in Seattle Area</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Impact of Refugee Immigration on Seattle Neighborhoods</h1>
-            <nav>
-                <ul>
-                    <li><a href="#slide1">Introduction</a></li>
-                    <li><a href="#slide2">Rainier Valley</a></li>
-                    <li><a href="#slide3">Tukwila</a></li>
-                    <li><a href="#slide4">Policy</a></li>
-                    <li><a href="#slide5">Housing Trends</a></li>
-                    <li><a href="#slide6">Safety</a></li>
-                    <li><a href="#slide7">Cultural Integration</a></li>
-                    <li><a href="#slide8">Questions</a></li>
-                    <li><a href="#slide9">Resolution</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Refugee Housing Crisis in Seattle Area</h1>
     </header>
-
-    <div class="slides">
-        <!-- Slide 1: Introduction -->
-        <div class="slide active" id="slide1">
-            <div class="container">
-                <h2>Introduction</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="images/statistics.jpg" alt="Refugee Statistics">
-                <img src="images/demographics.jpg" alt="Demographics Over Time">
-                <img src="images/map.jpg" alt="Map of Refugee Immigration to Washington">
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#confrontation">Confrontation</a></li>
+            <li><a href="#resolution">Resolution</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction" class="section">
+            <h2>Introduction</h2>
+            <div class="box">
+                <p>Washington State has consistently ranked among the top states for refugee resettlement in the United States. This section provides an overview of refugee immigration statistics, demographics, and trends over time.</p>
             </div>
-            <a class="next" href="#slide2">Next</a>
-        </div>
-
-        <!-- Slide 2: Rainier Valley -->
-        <div class="slide" id="slide2">
-            <div class="container">
-                <h2>Rainier Valley</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                </ul>
-                <img src="images/rainier_valley.jpg" alt="Rainier Valley">
+            <div id="statistics">
+                <canvas id="refugeeChart"></canvas>
             </div>
-            <a class="prev" href="#slide1">Prev</a>
-            <a class="next" href="#slide3">Next</a>
-        </div>
-
-        <!-- Slide 3: Tukwila -->
-        <div class="slide" id="slide3">
-            <div class="container">
-                <h2>Tukwila</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                </ul>
+            <div id="map" style="height: 400px;"></div>
+        </section>
+        <section id="confrontation" class="section">
+            <h2>Confrontation</h2>
+            <div id="rainier-valley" class="box">
+                <h3>Rainier Valley</h3>
+                <img src="images/rainier_beach.jpg" alt="Rainier Beach">
+                <p>Rainier Beach has a diverse cultural landscape with a notable presence of refugees from Somalia, Vietnam, Ethiopia, and other countries. Community organizations provide vital support through housing, legal assistance, and cultural integration programs.</p>
+            </div>
+            <div id="columbia-city" class="box">
+                <h3>Columbia City</h3>
+                <p>Columbia City, part of Rainier Valley, is notable for its diverse population, including many immigrants and refugees. The neighborhood offers a range of community organizations and cultural centers that support the refugee population, providing resources such as housing, legal assistance, and cultural integration programs.</p>
+            </div>
+            <div id="tukwila" class="box">
+                <h3>Tukwila</h3>
                 <img src="images/tukwila.jpg" alt="Tukwila">
+                <p>Tukwila, located south of Seattle, has a high concentration of refugees. Nearly 40% of Tukwila’s population is foreign-born, with significant numbers from Somalia, Burma, Bhutan, Venezuela, Angola, and Congo. This church has become a crucial hub for asylum seekers, providing shelter and establishing a sanctioned encampment and temporary tent village. Over 600 individuals have passed through the site, highlighting the community's efforts to support refugees.</p>
             </div>
-            <a class="prev" href="#slide2">Prev</a>
-            <a class="next" href="#slide4">Next</a>
-        </div>
-
-        <!-- Slide 4: Policy -->
-        <div class="slide" id="slide4">
-            <div class="container">
-                <h2>Policy Intervention</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                </ul>
-                <img src="images/policy.jpg" alt="Policy Intervention">
+            <div id="white-center" class="box">
+                <h3>White Center</h3>
+                <img src="images/white_center.jpg" alt="White Center">
+                <p>White Center, just south of Seattle, has a diverse immigrant and refugee population, including many from Vietnam, Cambodia, and African countries. The area is known for its strong community ties and multicultural identity.</p>
             </div>
-            <a class="prev" href="#slide3">Prev</a>
-            <a class="next" href="#slide5">Next</a>
-        </div>
-
-        <!-- Slide 5: Housing Trends -->
-        <div class="slide" id="slide5">
-            <div class="container">
-                <h2>Housing Trends</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="images/housing_trends.jpg" alt="Housing Trends">
-                <div id="housingMap" class="map"></div>
+            <div id="country-distribution" class="box">
+                <h3>Refugee Distribution by Country</h3>
+                <canvas id="countryChart"></canvas>
             </div>
-            <a class="prev" href="#slide4">Prev</a>
-            <a class="next" href="#slide6">Next</a>
-        </div>
-
-        <!-- Slide 6: Safety -->
-        <div class="slide" id="slide6">
-            <div class="container">
-                <h2>Safety</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="images/safety.jpg" alt="Safety">
-                <div id="safetyGraph" class="graph"></div>
+        </section>
+        <section id="resolution" class="section">
+            <h2>Resolution</h2>
+            <div class="box">
+                <p>This section summarizes the key findings and discusses the impact of the refugee influx on crime rates, housing, and cultural integration in Rainier Beach and Tukwila.</p>
             </div>
-            <a class="prev" href="#slide5">Prev</a>
-            <a class="next" href="#slide7">Next</a>
-        </div>
-
-        <!-- Slide 7: Cultural Integration -->
-        <div class="slide" id="slide7">
-            <div class="container">
-                <h2>Cultural Integration</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="images/cultural_integration.jpg" alt="Cultural Integration">
-            </div>
-            <a class="prev" href="#slide6">Prev</a>
-            <a class="next" href="#slide8">Next</a>
-        </div>
-
-        <!-- Slide 8: Questions -->
-        <div class="slide" id="slide8">
-            <div class="container">
-                <h2>Key Questions</h2>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <a class="prev" href="#slide7">Prev</a>
-            <a class="next" href="#slide9">Next</a>
-        </div>
-
-        <!-- Slide 9: Resolution -->
-        <div class="slide" id="slide9">
-            <div class="container">
-                <h2>Resolution</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                </ul>
-                <img src="images/resolution.jpg" alt="Resolution">
-            </div>
-            <a class="prev" href="#slide8">Prev</a>
-        </div>
-    </div>
-
+            <canvas id="crimeChart"></canvas>
+            <div id="findings-map" style="height: 400px;"></div>
+        </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Refugee Impact Analysis. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Refugee Housing Crisis Project</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

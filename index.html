@@ -3,72 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refugee Housing Crisis in Seattle Area</title>
+    <title>Impact of Refugee Immigration on Seattle Neighborhoods</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Refugee Housing Crisis in Seattle Area</h1>
+        <div class="container">
+            <h1>Impact of Refugee Immigration on Seattle Neighborhoods</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About the Research</a></li>
+                    <li><a href="#statistics">Refugee Statistics</a></li>
+                    <li><a href="#neighborhood">Neighborhood Analysis</a></li>
+                    <li><a href="#policy">Policy Interventions</a></li>
+                    <li><a href="#findings">Findings and Impact</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#confrontation">Confrontation</a></li>
-            <li><a href="#resolution">Resolution</a></li>
-        </ul>
-    </nav>
+
     <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <div class="box">
-                <p>Washington State has consistently ranked among the top states for refugee resettlement in the United States. This section provides an overview of refugee immigration statistics, demographics, and trends over time.</p>
-            </div>
-            <div id="statistics">
-                <canvas id="refugeeChart"></canvas>
-            </div>
-            <div id="map" style="height: 400px;"></div>
-        </section>
-        <section id="confrontation">
-            <h2>Confrontation</h2>
-            <div id="rainier-valley" class="box">
-                <h3>Rainier Valley</h3>
-                <img src="images/rainier_beach.jpg" alt="Rainier Beach">
-                <p>Rainier Beach has a diverse cultural landscape with a notable presence of refugees from Somalia, Vietnam, Ethiopia, and other countries. Community organizations provide vital support through housing, legal assistance, and cultural integration programs.</p>
-            </div>
-            <div id="columbia-city" class="box">
-                <h3>Columbia City</h3>
-                <p>Columbia City, part of Rainier Valley, is notable for its diverse population, including many immigrants and refugees. The neighborhood offers a range of community organizations and cultural centers that support the refugee population, providing resources such as housing, legal assistance, and cultural integration programs.</p>
-            </div>
-            <div id="tukwila" class="box">
-                <h3>Tukwila</h3>
-                <img src="images/tukwila.jpg" alt="Tukwila">
-                <p>Tukwila, located south of Seattle, has a high concentration of refugees. Nearly 40% of Tukwila’s population is foreign-born, with significant numbers from Somalia, Burma, Bhutan, Venezuela, Angola, and Congo. This church has become a crucial hub for asylum seekers, providing shelter and establishing a sanctioned encampment and temporary tent village. Over 600 individuals have passed through the site, highlighting the community's efforts to support refugees.</p>
-            </div>
-            <div id="white-center" class="box">
-                <h3>White Center</h3>
-                <img src="images/white_center.jpg" alt="White Center">
-                <p>White Center, just south of Seattle, has a diverse immigrant and refugee population, including many from Vietnam, Cambodia, and African countries. The area is known for its strong community ties and multicultural identity.</p>
-            </div>
-            <div id="country-distribution" class="box">
-                <h3>Refugee Distribution by Country</h3>
-                <canvas id="countryChart"></canvas>
+        <section id="home" class="section">
+            <div class="container">
+                <h2>Introduction</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="images/hero.jpg" alt="Hero Image">
+                <h3>Key Statistics</h3>
+                <p>Key statistics about refugee immigration in the Seattle area.</p>
+                <img src="images/statistics.jpg" alt="Refugee Statistics">
+                <img src="images/map.jpg" alt="Map of Refugee Immigration to Washington">
             </div>
         </section>
-        <section id="resolution">
-            <h2>Resolution</h2>
-            <div class="box">
-                <p>This section summarizes the key findings and discusses the impact of the refugee influx on crime rates, housing, and cultural integration in Rainier Beach and Tukwila.</p>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About the Research</h2>
+                <p>Detailed context about the refugee housing crisis. Main goals and questions the research aims to address. Explanation of the research methods and data sources used.</p>
             </div>
-            <canvas id="crimeChart"></canvas>
-            <div id="findings-map" style="height: 400px;"></div>
+        </section>
+
+        <section id="statistics" class="section">
+            <div class="container">
+                <h2>Refugee Statistics</h2>
+                <p>Demographic data on refugees in Seattle, including graphs and charts. Historical and recent trends in refugee immigration.</p>
+                <div id="statisticsChart" class="chart"></div>
+            </div>
+        </section>
+
+        <section id="neighborhood" class="section">
+            <div class="container">
+                <h2>Neighborhood Analysis</h2>
+                <h3>Overview of Neighborhoods</h3>
+                <p>Brief descriptions of each neighborhood studied (Rainier Valley, Tukwila, SeaTac, Kent, and White Center).</p>
+                <div class="neighborhood-analysis">
+                    <div class="neighborhood">
+                        <h4>Rainier Valley</h4>
+                        <p>In-depth analysis including housing trends, crime rates, financial stability, cultural integration.</p>
+                        <img src="images/rainier_valley.jpg" alt="Rainier Valley">
+                    </div>
+                    <div class="neighborhood">
+                        <h4>Tukwila</h4>
+                        <p>In-depth analysis including housing trends, crime rates, financial stability, cultural integration.</p>
+                        <img src="images/tukwila.jpg" alt="Tukwila">
+                    </div>
+                    <div class="neighborhood">
+                        <h4>SeaTac</h4>
+                        <p>In-depth analysis including housing trends, crime rates, financial stability, cultural integration.</p>
+                        <img src="images/seatac.jpg" alt="SeaTac">
+                    </div>
+                    <div class="neighborhood">
+                        <h4>Kent</h4>
+                        <p>In-depth analysis including housing trends, crime rates, financial stability, cultural integration.</p>
+                        <img src="images/kent.jpg" alt="Kent">
+                    </div>
+                    <div class="neighborhood">
+                        <h4>White Center</h4>
+                        <p>In-depth analysis including housing trends, crime rates, financial stability, cultural integration.</p>
+                        <img src="images/white_center.jpg" alt="White Center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="policy" class="section">
+            <div class="container">
+                <h2>Policy Interventions</h2>
+                <p>Overview of existing policies impacting refugee housing. Critical analysis of the effectiveness of these policies. Suggestions for policy improvements based on research findings. Examples of successful policy interventions from other regions or countries.</p>
+                <div id="policyChart" class="chart"></div>
+            </div>
+        </section>
+
+        <section id="findings" class="section">
+            <div class="container">
+                <h2>Findings and Impact</h2>
+                <p>Summary of the most significant findings from the research. How these findings impact the local communities and refugees. Anecdotal stories or interviews with refugees to humanize the data.</p>
+                <img src="images/findings.jpg" alt="Findings and Impact">
+            </div>
+        </section>
+
+        <section id="resources" class="section">
+            <div class="container">
+                <h2>Resources and Further Reading</h2>
+                <p>References to all sources cited in the research. Suggested articles, books, and papers for more in-depth information. Links to relevant organizations, government resources, and support services for refugees.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>How to get in touch with the research team. Feedback form for visitors to leave feedback or ask questions. Links to social media profiles for ongoing updates and engagement.</p>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Refugee Housing Crisis Project</p>
+        <div class="container">
+            <p>&copy; 2024 Refugee Impact Analysis. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>

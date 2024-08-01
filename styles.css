@@ -16,187 +16,170 @@ body {
 header {
     background: #4CAF50;
     color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    padding: 1remTo create an exact copy of the Canva presentation as a website, incorporating visually appealing transitions and interactive maps/graphs, here's how you can structure the files:
 
-header h1 {
-    margin: 0;
-}
+### `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact of Refugee Immigration on Seattle Neighborhoods</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Impact of Refugee Immigration on Seattle Neighborhoods</h1>
+            <nav>
+                <ul>
+                    <li><a href="#slide1">Introduction</a></li>
+                    <li><a href="#slide2">Rainier Valley</a></li>
+                    <li><a href="#slide3">Tukwila</a></li>
+                    <li><a href="#slide4">Policy</a></li>
+                    <li><a href="#slide5">Housing Trends</a></li>
+                    <li><a href="#slide6">Safety</a></li>
+                    <li><a href="#slide7">Cultural Integration</a></li>
+                    <li><a href="#slide8">Questions</a></li>
+                    <li><a href="#slide9">Resolution</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-}
+    <div class="slides">
+        <div class="slide active" id="slide1">
+            <div class="container">
+                <h2>Introduction</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="images/statistics.jpg" alt="Refugee Statistics">
+                <img src="images/demographics.jpg" alt="Demographics Over Time">
+                <img src="images/map.jpg" alt="Map of Refugee Immigration to Washington">
+            </div>
+            <a class="next" href="#slide2">Next</a>
+        </div>
 
-nav ul li {
-    margin: 0 1rem;
-}
+        <div class="slide" id="slide2">
+            <div class="container">
+                <h2>Rainier Valley</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <img src="images/rainier_valley.jpg" alt="Rainier Valley">
+            </div>
+            <a class="prev" href="#slide1">Prev</a>
+            <a class="next" href="#slide3">Next</a>
+        </div>
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+        <div class="slide" id="slide3">
+            <div class="container">
+                <h2>Tukwila</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <img src="images/tukwila.jpg" alt="Tukwila">
+            </div>
+            <a class="prev" href="#slide2">Prev</a>
+            <a class="next" href="#slide4">Next</a>
+        </div>
 
-.section {
-    padding: 4rem 0;
-}
+        <div class="slide" id="slide4">
+            <div class="container">
+                <h2>Policy Intervention</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <img src="images/policy.jpg" alt="Policy Intervention">
+            </div>
+            <a class="prev" href="#slide3">Prev</a>
+            <a class="next" href="#slide5">Next</a>
+        </div>
 
-h2 {
-    color: #4CAF50;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+        <div class="slide" id="slide5">
+            <div class="container">
+                <h2>Housing Trends</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="images/housing_trends.jpg" alt="Housing Trends">
+                <div id="housingMap" class="map"></div>
+            </div>
+            <a class="prev" href="#slide4">Prev</a>
+            <a class="next" href="#slide6">Next</a>
+        </div>
 
-h3 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
+        <div class="slide" id="slide6">
+            <div class="container">
+                <h2>Safety</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="images/safety.jpg" alt="Safety">
+                <div id="safetyGraph" class="graph"></div>
+            </div>
+            <a class="prev" href="#slide5">Prev</a>
+            <a class="next" href="#slide7">Next</a>
+        </div>
 
-h4 {
-    color: #333;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+        <div class="slide" id="slide7">
+            <div class="container">
+                <h2>Cultural Integration</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="images/cultural_integration.jpg" alt="Cultural Integration">
+            </div>
+            <a class="prev" href="#slide6">Prev</a>
+            <a class="next" href="#slide8">Next</a>
+        </div>
 
-p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
+        <div class="slide" id="slide8">
+            <div class="container">
+                <h2>Key Questions</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <a class="prev" href="#slide7">Prev</a>
+            <a class="next" href="#slide9">Next</a>
+        </div>
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 2rem 0;
-    border-radius: 8px;
-}
+        <div class="slide" id="slide9">
+            <div class="container">
+                <h2>Resolution</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <img src="images/resolution.jpg" alt="Resolution">
+            </div>
+            <a class="prev" href="#slide8">Prev</a>
+        </div>
+    </div>
 
-.neighborhood-analysis {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.neighborhood {
-    width: 48%;
-    margin-bottom: 2rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-form input,
-form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: Sure! Let's implement the JavaScript file to include transitions between sections and ensure the maps and graphs are centered.
-
-### `scripts.js`
-```javascript
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('.section');
-
-    function smoothScroll(targetId) {
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            smoothScroll(targetId);
-        });
-    });
-
-    sections.forEach(section => {
-        section.style.transition = 'opacity 0.6s ease-in-out';
-    });
-
-    window.addEventListener('scroll', () => {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-                section.style.opacity = 1;
-            } else {
-                section.style.opacity = 0;
-            }
-        });
-    });
-
-    // Initialize maps and graphs if any
-    initMaps();
-    initGraphs();
-});
-
-function initMaps() {
-    // Placeholder function to initialize maps
-    const housingMap = document.getElementById('housingMap');
-    const safetyGraph = document.getElementById('safetyGraph');
-
-    if (housingMap) {
-        housingMap.innerHTML = '<p>Interactive Housing Map Here</p>'; // Replace with actual map initialization
-        housingMap.style.height = '400px';
-        housingMap.style.backgroundColor = '#eaeaea';
-        housingMap.style.display = 'flex';
-        housingMap.style.justifyContent = 'center';
-        housingMap.style.alignItems = 'center';
-    }
-
-    if (safetyGraph) {
-        safetyGraph.innerHTML = '<p>Interactive Safety Graph Here</p>'; // Replace with actual graph initialization
-        safetyGraph.style.height = '400px';
-        safetyGraph.style.backgroundColor = '#eaeaea';
-        safetyGraph.style.display = 'flex';
-        safetyGraph.style.justifyContent = 'center';
-        safetyGraph.style.alignItems = 'center';
-    }
-}
-
-function initGraphs() {
-    // Placeholder function to initialize graphs
-    const statisticsChart = document.getElementById('statisticsChart');
-    const policyChart = document.getElementById('policyChart');
-
-    if (statisticsChart) {
-        statisticsChart.innerHTML = '<p>Interactive Statistics Chart Here</p>'; // Replace with actual chart initialization
-        statisticsChart.style.height = '400px';
-        statisticsChart.style.backgroundColor = '#eaeaea';
-        statisticsChart.style.display = 'flex';
-        statisticsChart.style.justifyContent = 'center';
-        statisticsChart.style.alignItems = 'center';
-    }
-
-    if (policyChart) {
-        policyChart.innerHTML = '<p>Interactive Policy Chart Here</p>'; // Replace with actual chart initialization
-        policyChart.style.height = '400px';
-        policyChart.style.backgroundColor = '#eaeaea';
-        policyChart.style.display = 'flex';
-        policyChart.style.justifyContent = 'center';
-        policyChart.style.alignItems = 'center';
-    }
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Refugee Impact Analysis. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,113 +1,202 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F5F5DC;
-    color: #2C3E50;
-    overflow-x: hidden;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
 }
 
 header {
-    background-color: #2C3E50;
-    color: #F5F5DC;
-    padding: 20px;
+    background: #4CAF50;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-nav {
-    background-color: #800020;
-    overflow: hidden;
+header h1 {
+    margin: 0;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    float: left;
+    margin: 0 1rem;
 }
 
 nav ul li a {
-    display: block;
-    color: #F5F5DC;
-    text-align: center;
-    padding: 14px 16px;
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-nav ul li a:hover {
-    background-color: #2C3E50;
-}
-
-main {
-    padding: 20px;
+.section {
+    padding: 4rem 0;
 }
 
 h2 {
-    color: #800020;
-    font-size: 2em;
-    margin-bottom: 10px;
+    color: #4CAF50;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
-    color: #355E3B;
-    font-size: 1.5em;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-section {
-    margin-bottom: 20px;
-    background-color: #D2B48C;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-size: 1.2em;
     line-height: 1.6;
-    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 2rem 0;
     border-radius: 8px;
 }
 
-footer {
-    background-color: #2C3E50;
-    color: #F5F5DC;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
+.neighborhood-analysis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#statistics, #rainier-valley, #columbia-city, #tukwila, #white-center, #resolution, #country-distribution {
-    margin-bottom: 20px;
+.neighborhood {
+    width: 48%;
+    margin-bottom: 2rem;
 }
 
-canvas {
-    max-width: 100%;
-    height: auto;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-#map, #findings-map {
-    width: 100%;
-    height: 400px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-.box {
-    background-color: #F5F5DC;
-    padding: 15px;
-    border: 1px solid #D2B48C;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+form input,
+form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: Sure! Let's implement the JavaScript file to include transitions between sections and ensure the maps and graphs are centered.
+
+### `scripts.js`
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('.section');
+
+    function smoothScroll(targetId) {
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            smoothScroll(targetId);
+        });
+    });
+
+    sections.forEach(section => {
+        section.style.transition = 'opacity 0.6s ease-in-out';
+    });
+
+    window.addEventListener('scroll', () => {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                section.style.opacity = 1;
+            } else {
+                section.style.opacity = 0;
+            }
+        });
+    });
+
+    // Initialize maps and graphs if any
+    initMaps();
+    initGraphs();
+});
+
+function initMaps() {
+    // Placeholder function to initialize maps
+    const housingMap = document.getElementById('housingMap');
+    const safetyGraph = document.getElementById('safetyGraph');
+
+    if (housingMap) {
+        housingMap.innerHTML = '<p>Interactive Housing Map Here</p>'; // Replace with actual map initialization
+        housingMap.style.height = '400px';
+        housingMap.style.backgroundColor = '#eaeaea';
+        housingMap.style.display = 'flex';
+        housingMap.style.justifyContent = 'center';
+        housingMap.style.alignItems = 'center';
+    }
+
+    if (safetyGraph) {
+        safetyGraph.innerHTML = '<p>Interactive Safety Graph Here</p>'; // Replace with actual graph initialization
+        safetyGraph.style.height = '400px';
+        safetyGraph.style.backgroundColor = '#eaeaea';
+        safetyGraph.style.display = 'flex';
+        safetyGraph.style.justifyContent = 'center';
+        safetyGraph.style.alignItems = 'center';
+    }
+}
+
+function initGraphs() {
+    // Placeholder function to initialize graphs
+    const statisticsChart = document.getElementById('statisticsChart');
+    const policyChart = document.getElementById('policyChart');
+
+    if (statisticsChart) {
+        statisticsChart.innerHTML = '<p>Interactive Statistics Chart Here</p>'; // Replace with actual chart initialization
+        statisticsChart.style.height = '400px';
+        statisticsChart.style.backgroundColor = '#eaeaea';
+        statisticsChart.style.display = 'flex';
+        statisticsChart.style.justifyContent = 'center';
+        statisticsChart.style.alignItems = 'center';
+    }
+
+    if (policyChart) {
+        policyChart.innerHTML = '<p>Interactive Policy Chart Here</p>'; // Replace with actual chart initialization
+        policyChart.style.height = '400px';
+        policyChart.style.backgroundColor = '#eaeaea';
+        policyChart.style.display = 'flex';
+        policyChart.style.justifyContent = 'center';
+        policyChart.style.alignItems = 'center';
+    }
 }
